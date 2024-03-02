@@ -1,0 +1,92 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  background-image: url('bg.png');
+
+  background-size: 80%;
+  margin: 0;
+  z-index: 0;
+  /* Remove default body margin */
+  /* Ensure the body element covers the entire viewport */
+  height: 100vh;
+}
+
+.flower_element {
+  width: 36px;
+  height: 40px;
+  /* Set background image for the flowers */
+  background-image: url('flower.png');
+  background-size: cover;
+  position: absolute;
+  z-index: 1;
+  /* Ensure clicked flowers appear above the background image */
+
+}
+
+
+
+
+
+
+:root {
+  --pixel-size: 4px;
+}
+
+.character {
+  width: calc(28 * var(--pixel-size));
+  height: calc(35 * var(--pixel-size));
+  background-size: cover;
+  position: relative;
+  overflow:hidden ;
+  z-index: 2;
+  transition: background-image 0.5s ease-in-out;
+}
+
+
+.kitty {
+  width: calc(112 * var(--pixel-size));
+  position: relative;
+}
+
+.spritesheet {
+  animation: moveSpritesheet 1s steps(4) infinite;
+  width: calc(112 * var(--pixel-size));
+  position: relative;
+}
+
+
+
+.face_front {
+  top: calc(0 * var(--pixel-size));
+}
+
+.face_left {
+  top: calc(-35 * var(--pixel-size));
+}
+
+.face_right {
+  top: calc(-70 * var(--pixel-size));
+}
+
+.face_back {
+  top: calc(-105 * var(--pixel-size));
+}
+
+
+
+.pixelart {
+  image-rendering: pixelated;
+}
+
+@keyframes moveSpritesheet {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: translate3d(-100%, 0, 0);
+  }
+}
