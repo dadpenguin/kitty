@@ -236,7 +236,7 @@ function change_anim(direction) {
 
 function playSound() {
   const audio = document.createElement('audio');
-  audio.src = 'pick_flower.mp3';
+  audio.src = 'pick_flower.opus';
   audio.play();
 }
 
