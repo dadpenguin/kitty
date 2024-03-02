@@ -1,5 +1,6 @@
 
 
+
 // init vars
 let latestX = 0;
 let latestY = 0;
@@ -72,8 +73,8 @@ document.addEventListener('click', function(event) {
 
     const character = document.querySelector(".character");
 
-
-
+    playBackgroundMusic()
+    
 
     // left or right
 
@@ -234,6 +235,13 @@ function playSound() {
   audio.play();
 }
 
+
+function playBackgroundMusic() {
+  const audio = document.getElementById("bgMusic");
+  audio.loop = true;
+  audio.volume = 0.1;
+  audio.play();
+}
 
 
 
