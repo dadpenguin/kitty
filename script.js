@@ -1,10 +1,4 @@
-function setHalfVolume() {
-    var myAudio = document.getElementById("bg_music");  
-    myAudio.volume = 0.03;
-    console.log("decreased")
-  
-  
-}
+
 
 // init vars
 let latestX = 0;
@@ -73,7 +67,7 @@ document.addEventListener('click', function(event) {
 
     // find total flowers
     let total_flowers = document.querySelectorAll('.flower_element').length;
-    
+
 
 
     const character = document.querySelector(".character");
@@ -83,15 +77,15 @@ document.addEventListener('click', function(event) {
 
     // left or right
 
-     
-    
+
+
     if (current_x < latestX) {
-      
+
       move_right()
-      
+
     }
     else {
-      
+
       move_left()
 
     }
@@ -140,10 +134,10 @@ document.addEventListener('click', function(event) {
     // up or down
     function up_or_down() {
       let findflower = document.querySelector('.flower_element');
-      
+
       if (current_y < latestY) {
         findflower.style.zIndex = 3;
-        
+
         // z index of flower turn to 3
         move_down()
       } else {
@@ -197,32 +191,32 @@ document.addEventListener('click', function(event) {
 
 // anim handler
 function change_anim(direction) {
-  
+
 
   const spritesheet = document.querySelector(".kitty");
-  
+
   if (direction == 1 && anim_changed == 0) {
     spritesheet.className = "spritesheet face_front pixelart kitty";
     anim_changed = 1;
-    
+
   }
 
   else if (direction == 2 && anim_changed == 0) {
     spritesheet.className = "spritesheet face_back pixelart kitty";
     anim_changed = 1;
-    
+
   }
 
   else if (direction == 3 && anim_changed == 0) {
     spritesheet.className = "spritesheet face_left pixelart kitty";
     anim_changed = 1;
-    
+
   }
 
   else if (direction == 4 && anim_changed == 0) {
     spritesheet.className = "spritesheet face_right pixelart kitty";
     anim_changed = 1;
-    
+
   }
 
 }
@@ -250,8 +244,8 @@ function playSound() {
 function remove_anim() {
 
   const spritesheet = document.querySelector(".kitty");
-  
-  
+
+
   spritesheet.className = "idle pixelart kitty";
   anim_changed = 0;
 }
@@ -274,5 +268,5 @@ function remove_anim() {
 function removeFlowers() {
   let flowers = document.querySelectorAll('.flower_element');
   flowers.forEach(flower => flower.remove());
-  
+
 }
